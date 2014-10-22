@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeReactions.Keylogger", "CodeReactions.Keylogger\CodeReactions.Keylogger.csproj", "{717A9107-F092-4F56-829C-AD74A4CBF6D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeReactions.Server", "CodeReactions.Server\CodeReactions.Server.csproj", "{BF74957F-565A-481A-821A-13490AC96CF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeReactions.Messages", "CodeReactions.Messages\CodeReactions.Messages.csproj", "{3163DEEF-7269-47BC-BFF9-466CE3A09576}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeReactions.Client", "CodeReactions.Client\CodeReactions.Client.csproj", "{8C322EF6-88E0-4319-8D6F-6AAB8475C7AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeReactions.Tests", "CodeReactions.Tests\CodeReactions.Tests.csproj", "{AF137FE5-1299-4889-9880-825E7EFA1874}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{717A9107-F092-4F56-829C-AD74A4CBF6D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{717A9107-F092-4F56-829C-AD74A4CBF6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{717A9107-F092-4F56-829C-AD74A4CBF6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{717A9107-F092-4F56-829C-AD74A4CBF6D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF74957F-565A-481A-821A-13490AC96CF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF74957F-565A-481A-821A-13490AC96CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF74957F-565A-481A-821A-13490AC96CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF74957F-565A-481A-821A-13490AC96CF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3163DEEF-7269-47BC-BFF9-466CE3A09576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3163DEEF-7269-47BC-BFF9-466CE3A09576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3163DEEF-7269-47BC-BFF9-466CE3A09576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3163DEEF-7269-47BC-BFF9-466CE3A09576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C322EF6-88E0-4319-8D6F-6AAB8475C7AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C322EF6-88E0-4319-8D6F-6AAB8475C7AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C322EF6-88E0-4319-8D6F-6AAB8475C7AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C322EF6-88E0-4319-8D6F-6AAB8475C7AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF137FE5-1299-4889-9880-825E7EFA1874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF137FE5-1299-4889-9880-825E7EFA1874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF137FE5-1299-4889-9880-825E7EFA1874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF137FE5-1299-4889-9880-825E7EFA1874}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<label>Results:</label>
+<div id="results">The quick something or other</div>
+@*<script>
+    var monitor = $.connection.monitorServiceHub;
+    monitor.client.projectUpdated = function (message) {
+        $('#latest').append('<li>' + message + '</li>');
+    }
+    $.connection.hub.start().done(function () {
+        monitor.server.projectUpdate("Starting Monitor");
+    });
+</script>*@
