@@ -16,7 +16,7 @@ namespace CodeReactions.Keylogger
 
 			//Program.UseObservableCreate();
 			//Program.UseObservableEventPattern();
-			//Program.UseObservableEventPatternWithStringName();
+			//Program.UseObservableEventPatternWithEventName();
 
 			//Program.UseFilteredObservable();
 			//Program.UseFilteredTimedObservable();
@@ -76,12 +76,12 @@ namespace CodeReactions.Keylogger
 			}
 		}
 
-		private static void UseObservableEventPatternWithStringName()
+		private static void UseObservableEventPatternWithEventName()
 		{
 			using (var keylogger = new EventedKeylogger())
 			{
 				var observable = Observable.FromEventPattern<KeyLoggedEventArgs>(
-					keylogger, "KeyLogged");
+					keylogger, nameof(EventedKeylogger.KeyLogged));
 				using (var subscription = observable.Subscribe(
 					pattern => Console.Out.WriteLine(pattern.EventArgs.Key)))
 				{
@@ -95,7 +95,7 @@ namespace CodeReactions.Keylogger
 			using (var keylogger = new EventedKeylogger())
 			{
 				using (var subscriber = Observable.FromEventPattern<KeyLoggedEventArgs>(
-					keylogger, "KeyLogged")
+					keylogger, nameof(EventedKeylogger.KeyLogged))
 					.Where(pattern => Program.pianoKeys.Contains(pattern.EventArgs.Key))
 					.Subscribe(pattern => Console.Out.WriteLine(pattern.EventArgs.Key)))
 				{
@@ -109,7 +109,7 @@ namespace CodeReactions.Keylogger
 			using (var keylogger = new EventedKeylogger())
 			{
 				var observable = Observable.FromEventPattern<KeyLoggedEventArgs>(
-					keylogger, "KeyLogged")
+					keylogger, nameof(EventedKeylogger.KeyLogged))
 					.Where(pattern => Program.pianoKeys.Contains(pattern.EventArgs.Key));
 				using (var consoleSubscriber =
 					observable.Subscribe(pattern => Console.Out.WriteLine(pattern.EventArgs.Key)))

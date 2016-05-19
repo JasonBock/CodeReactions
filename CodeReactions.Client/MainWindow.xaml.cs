@@ -52,11 +52,14 @@ namespace CodeReactions.Client
 			this.connection = new HubConnection("http://localhost:22503");
 			this.proxy = this.connection.CreateHubProxy("KeyloggerHub");
 
-			this.onStartSubscription = Observable.FromEventPattern<RoutedEventArgs>(this.StartListening, "Click")
+			this.onStartSubscription = Observable.FromEventPattern<RoutedEventArgs>(
+				this.StartListening, nameof(Button.Click))
 				.Subscribe(e => this.OnStartListeningClick(e.EventArgs));
-			this.onStopSubscription = Observable.FromEventPattern<RoutedEventArgs>(this.StopListening, "Click")
+			this.onStopSubscription = Observable.FromEventPattern<RoutedEventArgs>(
+				this.StopListening, nameof(Button.Click))
 				.Subscribe(e => this.OnStopListeningClick(e.EventArgs));
-			this.autoSaveSubscription = Observable.FromEventPattern<TextChangedEventArgs>(this.Results, "TextChanged")
+			this.autoSaveSubscription = Observable.FromEventPattern<TextChangedEventArgs>(
+				this.Results, nameof(TextBox.TextChanged))
 				.Throttle(TimeSpan.FromSeconds(2))
 				.ObserveOn(SynchronizationContext.Current)
 				.Subscribe(e => this.AutoSave());

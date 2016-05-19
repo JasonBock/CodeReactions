@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reactive.Concurrency;
 using Microsoft.Reactive.Testing;
-using ReactiveUI.Testing;
 using Xunit;
 
 namespace CodeReactions.Tests
@@ -12,16 +11,14 @@ namespace CodeReactions.Tests
 		public void Listen()
 		{
 			var source = new KeyloggerSource();
+			var scheduler = new TestScheduler();
 
-			new TestScheduler().With(scheduler =>
+			using (var listener = new KeyloggerThrottledEventListener(source, scheduler))
 			{
-				using (var listener = new KeyloggerThrottledEventListener(source, scheduler))
-				{
-					source.PressKeys(new[] { 'a', 'b', 'c' });
-					scheduler.AdvanceByMs(5000);
-					Assert.Equal("abc", listener.LatestKeys);
-				}
-			});
+				source.PressKeys(new[] { 'a', 'b', 'c' });
+				scheduler.AdvanceBy(TimeSpan.TicksPerMillisecond * 5000);
+				Assert.Equal("abc", listener.LatestKeys);
+			}
 		}
 
 		[Fact]
@@ -32,7 +29,9 @@ namespace CodeReactions.Tests
 			using (var listener = new KeyloggerThrottledEventListener(source, Scheduler.Default))
 			{
 				source.PressKeys(new[] { 'a', 'b', 'c' });
-				Assert.Equal("abc", listener.LatestKeys);
+				// Technically, if this tests takes longer than 5 seconds, this may not be null :)
+				// But that's the point, we don't have the control we want.
+				Assert.Null(listener.LatestKeys);
 			}
 		}
 

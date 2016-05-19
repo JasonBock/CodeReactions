@@ -15,10 +15,11 @@ namespace CodeReactions.Keylogger
 		public void Dispose()
 		{
 			this.Watch.Stop();
-			Console.Out.WriteLine("{0} - {1}", this.Name, this.Watch.Elapsed);
+			Console.Out.WriteLine(
+				$"{this.Name} - {this.Watch.Elapsed}");
 		}
 
-		public string Name { get; private set; }
-		public Stopwatch Watch { get; private set; }
+		public string Name { get; }
+		public Stopwatch Watch { get; }
 	}
 }

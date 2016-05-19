@@ -23,7 +23,8 @@ namespace CodeReactions.Tests
 			}
 
 			this.source = source;
-			this.subscription = Observable.FromEventPattern<KeysPressedEventArgs>(this.source, "KeysPressed")
+			this.subscription = Observable.FromEventPattern<KeysPressedEventArgs>(
+				this.source, nameof(KeyloggerSource.KeysPressed))
 				.Throttle(TimeSpan.FromSeconds(5), scheduler)
 				.Subscribe(pattern => this.LatestKeys = new string(pattern.EventArgs.Message.Keys));
 		}
