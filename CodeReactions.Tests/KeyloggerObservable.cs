@@ -23,7 +23,7 @@ namespace CodeReactions.Tests
 
 		public void Dispose()
 		{
-			throw new NotImplementedException();
+			this.subscription.Dispose();
 		}
 	}
 }

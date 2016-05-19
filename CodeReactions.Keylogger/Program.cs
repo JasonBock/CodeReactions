@@ -13,13 +13,17 @@ namespace CodeReactions.Keylogger
 		{
 			//Program.UseConsoleKeylogger();
 			//Program.UseObservableKeylogger();
+
 			//Program.UseObservableCreate();
 			//Program.UseObservableEventPattern();
 			//Program.UseObservableEventPatternWithStringName();
+
 			//Program.UseFilteredObservable();
 			//Program.UseFilteredTimedObservable();
+			
 			//Program.UseExceptionObserverWithOnError();
 			//Program.UseExceptionObserverWithRetry();
+			
 			Program.UsePublishingKeylogger();
 			//Program.UseSimulatedPublishingKeylogger();
 		}

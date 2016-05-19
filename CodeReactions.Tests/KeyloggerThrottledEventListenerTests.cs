@@ -25,6 +25,18 @@ namespace CodeReactions.Tests
 		}
 
 		[Fact]
+		public void ListenWithDefaultScheduler()
+		{
+			var source = new KeyloggerSource();
+
+			using (var listener = new KeyloggerThrottledEventListener(source, Scheduler.Default))
+			{
+				source.PressKeys(new[] { 'a', 'b', 'c' });
+				Assert.Equal("abc", listener.LatestKeys);
+			}
+		}
+
+		[Fact]
 		public void ListenWhenSourceIsNull()
 		{
 			Assert.Throws<ArgumentNullException>(() =>

@@ -4,7 +4,10 @@ namespace CodeReactions.Keylogger
 	public sealed class ConsoleObserver
 		: IObserver<char>
 	{
-		public void OnCompleted() { }
+		public void OnCompleted() 
+		{
+			Console.Out.WriteLine("Completed.");
+		}
 
 		public void OnError(Exception error)
 		{
@@ -13,7 +16,7 @@ namespace CodeReactions.Keylogger
 
 		public void OnNext(char value)
 		{
-			Console.Out.WriteLine(value);
+			Console.Out.Write(value);
 		}
 	}
 }

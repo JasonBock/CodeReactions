@@ -11,7 +11,7 @@ namespace CodeReactions.Keylogger
 
 		protected override void HandleKey(Keys key)
 		{
-			Console.Out.WriteLine(key);
+			Console.Out.Write(key);
 		}
 	}
 }
